@@ -66,7 +66,7 @@ export function PriceChart({ data, isLoading, symbol }: PriceChartProps) {
               borderRadius: '0.5rem',
             }}
             labelStyle={{ color: '#e2e8f0' }}
-            formatter={(value: number) => `$${value.toFixed(2)}`}
+            formatter={(value) => (value !== undefined ? `$${(value as number).toFixed(2)}` : '')}
           />
           <Line
             type="monotone"
